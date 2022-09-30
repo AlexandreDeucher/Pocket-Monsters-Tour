@@ -1,12 +1,6 @@
+1. *Pokedex*
 
-1. **Pokedex**
 - pokemon(String)
-- tipo(String)
-	 - inseto(String)
-	 - lutador(String)
-	 - normal(String)
-	 - psiquico(String)
-
 - peso(Float)
 - altura(Float)
 - doce(String)
@@ -14,9 +8,9 @@
 - numero_do_pokemon(int)
 - insignia(String)
 
-__________________________________________________________
+____________________
 
-2. **Inventario**
+2. *Inventario*
 
 - pocao(String)
 - doce(String)
@@ -25,25 +19,43 @@ __________________________________________________________
 - pokebola(String)
 - fruta(String)
 
-__________________________________________________________
+____________________
 
-3. **Batalha**
+3. *Batalha*
 
 - vitorias(int)
 - batalhas(int)
 - recompensas(String)
 
-__________________________________________________________
+____________________
 
-4. **Rank**
+4. *Rank*
 
 - rank_liga(String)
 - pdl(int)
 
-__________________________________________________________
+____________________
 
-5. **missao**
+5. *missao*
 
 - diaria(String)
 - campo(String)
 - especial(String)
+
+____________________
+
+6. *Conta*
+
+- nome
+- idade
+- email
+- senha
+
+____________________
+
+7. *tipo*
+
+ - inseto(String)
+ - lutador(String)
+ - normal(String)
+ - psiquico(String)
