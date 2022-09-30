@@ -46,10 +46,10 @@ ____________________
 
 6. *Conta*
 
-- nome
-- idade
-- email
-- senha
+- nome(String)
+- idade(int)
+- email(String)
+- senha(String)
 
 ____________________
 
