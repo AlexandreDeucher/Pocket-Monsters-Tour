@@ -1,5 +1,8 @@
 **Pocket Monsters Tour**
 --
+Java project made in collaboration with  [Alexandre Deucher](https://github.com/AlexandreDeucher) for the IFSC Systems Development Practice course.
+
+---
  Estudo de caso para a disciplina de Práticas em Desenvolvimento de Sistemas da quinta fase de informática.
 - Estudantes responsáveis: Alexandre, Sam Pfleger Mendes
 ---
