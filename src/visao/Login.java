@@ -131,10 +131,5 @@ public class Login extends JFrame {
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
 		lblNewLabel_5.setBounds(10, 6, 283, 59);
 		contentPane.add(lblNewLabel_5);
-
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(292, 12, 58, 70);
-		contentPane.add(lblNewLabel_1);
-		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("/visao/squiroclos-removebg-preview (1).png")));
 	}
 }
