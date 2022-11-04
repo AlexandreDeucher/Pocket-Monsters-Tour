@@ -98,7 +98,7 @@ public class Login extends JFrame {
 		panel.add(btnEntrar);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("/images/bulba_hw-removebg-preview (1).png")));
+		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("/visao/bulba_hw-removebg-preview (1).png")));
 		lblNewLabel.setBounds(105, 11, 156, 129);
 		panel.add(lblNewLabel);
 
@@ -124,7 +124,7 @@ public class Login extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setBounds(10, 105, 391, 370);
 		contentPane.add(lblNewLabel_2);
-		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/images/charizzard.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/visao/charizzard.png")));
 
 		JLabel lblNewLabel_5 = new JLabel("Pocket Monsters Tour");
 		lblNewLabel_5.setFont(new Font("Yu Gothic Light", Font.BOLD, 22));
@@ -135,6 +135,6 @@ public class Login extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(292, 12, 58, 70);
 		contentPane.add(lblNewLabel_1);
-		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("/images/squiroclos-removebg-preview (1).png")));
+		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("/visao/squiroclos-removebg-preview (1).png")));
 	}
 }
