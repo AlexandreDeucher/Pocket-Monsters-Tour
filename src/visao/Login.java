@@ -91,6 +91,12 @@ public class Login extends JFrame {
 		panel.add(lblNewLabel_4);
 
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				
+			}
+		});
 		btnEntrar.setFont(new Font("Yu Gothic", Font.BOLD, 13));
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setBackground(new Color(159, 0, 88));
@@ -106,17 +112,18 @@ public class Login extends JFrame {
 		pwdSenha.setBounds(84, 240, 198, 19);
 		panel.add(pwdSenha);
 
+		pwdSenha.setEchoChar('*');
+		
 		JCheckBox checkBoxVerSenha = new JCheckBox("");
 		checkBoxVerSenha.setBackground(new Color(36, 31, 49));
 		checkBoxVerSenha.setBounds(290, 236, 21, 23);
 		panel.add(checkBoxVerSenha);
 		checkBoxVerSenha.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (pwdSenha.getEchoChar() == '*') {
+				if(pwdSenha.getEchoChar()== '*') {
 					pwdSenha.setEchoChar((char) 0);
-				} else {
+				}else {
 					pwdSenha.setEchoChar('*');
-
 				}
 			}
 		});

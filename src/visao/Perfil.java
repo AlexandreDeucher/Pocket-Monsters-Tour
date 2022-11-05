@@ -11,7 +11,7 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class Conta extends JFrame {
+public class Perfil extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
@@ -23,7 +23,7 @@ public class Conta extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Conta frame = new Conta();
+					Perfil frame = new Perfil();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class Conta extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Conta() {
+	public Perfil() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 549, 282);
 		contentPane = new JPanel();
@@ -46,7 +46,7 @@ public class Conta extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Conta.class.getResource("/visao/profile-removebg-preview.png")));
+		lblNewLabel.setIcon(new ImageIcon(Perfil.class.getResource("/visao/profile-removebg-preview.png")));
 		lblNewLabel.setBounds(10, 11, 128, 128);
 		contentPane.add(lblNewLabel);
 		
