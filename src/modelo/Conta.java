@@ -6,7 +6,7 @@ import visao.Login;
 
 public class Conta {
 
-	public 	String name;
+	private String name;
 	private String password;
 	private LocalDate dataNascimento;
 	private String email;

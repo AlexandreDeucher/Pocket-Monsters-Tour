@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class Perfil extends JFrame {
 
@@ -47,15 +48,16 @@ public class Perfil extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Perfil.class.getResource("/visao/profile-removebg-preview.png")));
-		lblNewLabel.setBounds(10, 11, 128, 128);
+		lblNewLabel.setBounds(10, 49, 128, 128);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNome.setForeground(new Color(255, 255, 255));
 		txtNome.setBackground(new Color(0, 128, 192));
 		txtNome.setText("nome");
-		txtNome.setBounds(148, 22, 86, 20);
+		txtNome.setBounds(165, 73, 301, 69);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 	}
