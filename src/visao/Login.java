@@ -81,16 +81,16 @@ public class Login extends JFrame {
 		JLabel lblNewLabel_3 = new JLabel("Usu\u00E1rio");
 		lblNewLabel_3.setFont(new Font("Yu Gothic", Font.BOLD, 12));
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setBounds(124, 162, 101, 14);
+		lblNewLabel_3.setBounds(134, 162, 55, 14);
 		panel.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel("Senha");
 		lblNewLabel_4.setFont(new Font("Yu Gothic", Font.BOLD, 12));
 		lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		lblNewLabel_4.setBounds(151, 219, 46, 14);
+		lblNewLabel_4.setBounds(141, 220, 46, 14);
 		panel.add(lblNewLabel_4);
 
-		JButton btnEntrar = new JButton("Entrar");
+		JButton btnEntrar = new JButton("ENTRAR");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -99,9 +99,9 @@ public class Login extends JFrame {
 			}
 		});
 		btnEntrar.setFont(new Font("Yu Gothic", Font.BOLD, 13));
-		btnEntrar.setForeground(new Color(64, 0, 64));
-		btnEntrar.setBackground(new Color(159, 0, 88));
-		btnEntrar.setBounds(114, 313, 121, 25);
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setBackground(new Color(153, 0, 51));
+		btnEntrar.setBounds(99, 276, 136, 20);
 		panel.add(btnEntrar);
 
 		JLabel lblNewLabel = new JLabel("");
@@ -116,13 +116,13 @@ public class Login extends JFrame {
 		pwdSenha.setEchoChar('*');
 		
 		JCheckBox checkBoxVerSenha = new JCheckBox("");
-		checkBoxVerSenha.setBackground(new Color(36, 31, 49));
+		checkBoxVerSenha.setBackground(new Color(51, 0, 102));
 		checkBoxVerSenha.setBounds(290, 236, 21, 23);
 		panel.add(checkBoxVerSenha);
 		
-		JButton btnCadastro = new JButton("Cadastre-se");
-		btnCadastro.setForeground(new Color(0, 0, 128));
-		btnCadastro.setBackground(new Color(158, 75, 73));
+		JButton btnCadastro = new JButton("CADASTRAR");
+		btnCadastro.setForeground(new Color(255, 255, 255));
+		btnCadastro.setBackground(new Color(153, 0, 51));
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//Abre uma tela fala dele
@@ -130,7 +130,7 @@ public class Login extends JFrame {
 				new Cadastro().setVisible(true);
 			}
 		});
-		btnCadastro.setBounds(121, 270, 107, 23);
+		btnCadastro.setBounds(99, 312, 136, 20);
 		panel.add(btnCadastro);
 		checkBoxVerSenha.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

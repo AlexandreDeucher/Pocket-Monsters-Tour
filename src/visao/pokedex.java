@@ -43,7 +43,7 @@ public class pokedex extends JFrame {
 	 */
 	public pokedex() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 434);
+		setBounds(100, 100, 646, 431);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -98,7 +98,7 @@ public class pokedex extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Insignia");
-		lblNewLabel_3.setBounds(354, 238, 46, 14);
+		lblNewLabel_3.setBounds(354, 238, 92, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("id");
@@ -106,7 +106,7 @@ public class pokedex extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		btnNewButton = new JButton("Cadastrar Pokemon");
-		btnNewButton.setBounds(49, 347, 152, 23);
+		btnNewButton.setBounds(49, 347, 197, 23);
 		contentPane.add(btnNewButton);
 	}
 

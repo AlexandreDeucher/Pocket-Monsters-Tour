@@ -7,12 +7,16 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.Font;
 
 public class Missoes extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtVejaOSeu;
-	private JTextField txtAbraAAba;
 
 	/**
 	 * Launch the application.
@@ -34,35 +38,47 @@ public class Missoes extends JFrame {
 	 * Create the frame.
 	 */
 	public Missoes() {
+		setBackground(new Color(42, 51, 70));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 230, 121);
+		setBounds(100, 100, 776, 355);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(42, 51, 70));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtVejaOSeu = new JTextField();
-		txtVejaOSeu.setText("Veja o seu perfil");
-		txtVejaOSeu.setEditable(false);
-		txtVejaOSeu.setBounds(10, 11, 94, 20);
-		contentPane.add(txtVejaOSeu);
-		txtVejaOSeu.setColumns(10);
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Missoes.class.getResource("/visao/bulba_hw-removebg-preview (1).png")));
+		label.setBounds(40, 65, 171, 218);
+		contentPane.add(label);
 		
-		txtAbraAAba = new JTextField();
-		txtAbraAAba.setText("Abra a aba batalhas");
-		txtAbraAAba.setEditable(false);
-		txtAbraAAba.setBounds(10, 42, 120, 20);
-		contentPane.add(txtAbraAAba);
-		txtAbraAAba.setColumns(10);
+		JButton btnVejaOSeu = new JButton("Veja o seu perfil");
+		btnVejaOSeu.setForeground(new Color(255, 255, 255));
+		btnVejaOSeu.setBackground(new Color(94, 92, 100));
+		btnVejaOSeu.setBounds(20, 13, 180, 25);
+		contentPane.add(btnVejaOSeu);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.setBounds(111, 10, 97, 23);
-		contentPane.add(chckbxNewCheckBox);
+		JButton btnAbraAAba = new JButton("Abra a aba batalhas");
+		btnAbraAAba.setForeground(new Color(255, 255, 255));
+		btnAbraAAba.setBackground(new Color(94, 92, 100));
+		btnAbraAAba.setBounds(20, 50, 180, 25);
+		contentPane.add(btnAbraAAba);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("");
-		chckbxNewCheckBox_1.setBounds(136, 41, 97, 23);
-		contentPane.add(chckbxNewCheckBox_1);
+		JTextArea txtrGvb = new JTextArea();
+		txtrGvb.setFont(new Font("L M Mono Prop10", Font.PLAIN, 16));
+		txtrGvb.setForeground(new Color(255, 255, 255));
+		txtrGvb.setBackground(new Color(119, 118, 123));
+		txtrGvb.setText("Missões incompletas");
+		txtrGvb.setBounds(265, 33, 204, 250);
+		contentPane.add(txtrGvb);
+		
+		JTextArea txtrMissesConcludas = new JTextArea();
+		txtrMissesConcludas.setFont(new Font("L M Mono Prop10", Font.PLAIN, 16));
+		txtrMissesConcludas.setForeground(new Color(255, 255, 255));
+		txtrMissesConcludas.setBackground(new Color(119, 118, 123));
+		txtrMissesConcludas.setText("Missões concluídas");
+		txtrMissesConcludas.setBounds(481, 32, 208, 251);
+		contentPane.add(txtrMissesConcludas);
 	}
-
 }

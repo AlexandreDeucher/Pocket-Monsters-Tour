@@ -38,7 +38,7 @@ public class Perfil extends JFrame {
 	 */
 	public Perfil() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 549, 282);
+		setBounds(100, 100, 492, 274);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(228, 228, 228));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,12 +52,12 @@ public class Perfil extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		txtNome.setFont(new Font("Dialog", Font.PLAIN, 18));
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNome.setForeground(new Color(255, 255, 255));
 		txtNome.setBackground(new Color(0, 128, 192));
 		txtNome.setText("nome");
-		txtNome.setBounds(165, 73, 301, 69);
+		txtNome.setBounds(165, 73, 172, 22);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 	}
