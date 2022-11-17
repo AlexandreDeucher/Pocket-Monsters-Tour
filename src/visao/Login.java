@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import controle.ContaControl;
+import modelo.Conta;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -21,6 +25,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.JEditorPane;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JSlider;
 import javax.swing.JPasswordField;
@@ -30,7 +35,7 @@ import javax.swing.JCheckBox;
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtDigiteSeuUsuario;
+	private JTextField txtUsuario;
 	private JPasswordField pwdSenha;
 
 	/**
@@ -41,6 +46,7 @@ public class Login extends JFrame {
 			public void run() {
 				try {
 					Login frame = new Login();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -71,12 +77,12 @@ public class Login extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 
-		txtDigiteSeuUsuario = new JTextField();
-		txtDigiteSeuUsuario.setForeground(new Color(128, 128, 128));
-		txtDigiteSeuUsuario.setBackground(new Color(235, 227, 199));
-		txtDigiteSeuUsuario.setBounds(78, 188, 193, 20);
-		panel.add(txtDigiteSeuUsuario);
-		txtDigiteSeuUsuario.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setForeground(new Color(128, 128, 128));
+		txtUsuario.setBackground(new Color(235, 227, 199));
+		txtUsuario.setBounds(78, 188, 193, 20);
+		panel.add(txtUsuario);
+		txtUsuario.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("Usu\u00E1rio");
 		lblNewLabel_3.setFont(new Font("Yu Gothic", Font.BOLD, 12));
@@ -93,9 +99,24 @@ public class Login extends JFrame {
 		JButton btnEntrar = new JButton("ENTRAR");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				new Inventario().setVisible(true);
-				
+
+				String usuario = txtUsuario.getText();
+				String senha = pwdSenha.getText();
+
+				ContaControl tabelaConta = new ContaControl();
+				Conta conta = tabelaConta.login(usuario, senha);
+				if (conta != null) {
+
+					dispose();
+					// abre janela pokedex
+					Inventario inventario = new Inventario();
+					inventario.setLocationRelativeTo(null);
+					inventario.setVisible(true);
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Nenhum usuario/senha encontrado!");
+				}
+
 			}
 		});
 		btnEntrar.setFont(new Font("Yu Gothic", Font.BOLD, 13));
@@ -114,29 +135,31 @@ public class Login extends JFrame {
 		panel.add(pwdSenha);
 
 		pwdSenha.setEchoChar('*');
-		
+
 		JCheckBox checkBoxVerSenha = new JCheckBox("");
 		checkBoxVerSenha.setBackground(new Color(51, 0, 102));
 		checkBoxVerSenha.setBounds(290, 236, 21, 23);
 		panel.add(checkBoxVerSenha);
-		
+
 		JButton btnCadastro = new JButton("CADASTRAR");
 		btnCadastro.setForeground(new Color(255, 255, 255));
 		btnCadastro.setBackground(new Color(153, 0, 51));
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Abre uma tela fala dele
+				// Abre uma tela fala dele
 				dispose();
-				new Cadastro().setVisible(true);
+				Cadastro cadastro = new Cadastro();
+				cadastro.setLocationRelativeTo(null);
+				cadastro.setVisible(true);
 			}
 		});
 		btnCadastro.setBounds(99, 312, 136, 20);
 		panel.add(btnCadastro);
 		checkBoxVerSenha.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(pwdSenha.getEchoChar()== '*') {
+				if (pwdSenha.getEchoChar() == '*') {
 					pwdSenha.setEchoChar((char) 0);
-				}else {
+				} else {
 					pwdSenha.setEchoChar('*');
 				}
 			}

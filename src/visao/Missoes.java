@@ -13,6 +13,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Missoes extends JFrame {
 
@@ -54,6 +56,15 @@ public class Missoes extends JFrame {
 		contentPane.add(label);
 		
 		JButton btnVejaOSeu = new JButton("Veja o seu perfil");
+		btnVejaOSeu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Perfil Perfil = new Perfil();
+				Perfil.setLocationRelativeTo(null);
+				Perfil.setVisible(true);
+				
+			}
+		});
 		btnVejaOSeu.setForeground(new Color(255, 255, 255));
 		btnVejaOSeu.setBackground(new Color(94, 92, 100));
 		btnVejaOSeu.setBounds(20, 13, 180, 25);
