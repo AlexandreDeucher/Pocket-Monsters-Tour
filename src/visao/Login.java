@@ -119,7 +119,7 @@ public class Login extends JFrame {
 
 			}
 		});
-		btnEntrar.setFont(new Font("Yu Gothic", Font.BOLD, 13));
+		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setBackground(new Color(153, 0, 51));
 		btnEntrar.setBounds(99, 276, 136, 20);
