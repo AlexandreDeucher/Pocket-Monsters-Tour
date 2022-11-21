@@ -5,21 +5,30 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controle.ContaControl;
+import controle.ControlPoke;
+import modelo.Conta;
+import modelo.Pokemon;
+
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import modelo.Pokemon;
 public class pokedex extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCharizard;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txtNome;
+	private JTextField txtPeso;
+	private JTextField txtAlt;
+	private JTextField txtInsignia;
+	private JTextField txtId;
 	private JButton btnNewButton;
 
 	/**
@@ -60,30 +69,30 @@ public class pokedex extends JFrame {
 		contentPane.add(txtCharizard);
 		txtCharizard.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBounds(232, 68, 112, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtNome = new JTextField();
+		txtNome.setBounds(232, 68, 112, 20);
+		contentPane.add(txtNome);
+		txtNome.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(232, 123, 112, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtPeso = new JTextField();
+		txtPeso.setBounds(232, 123, 112, 20);
+		contentPane.add(txtPeso);
+		txtPeso.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(232, 177, 112, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txtAlt = new JTextField();
+		txtAlt.setBounds(232, 177, 112, 20);
+		contentPane.add(txtAlt);
+		txtAlt.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(232, 235, 112, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		txtInsignia = new JTextField();
+		txtInsignia.setBounds(232, 235, 112, 20);
+		contentPane.add(txtInsignia);
+		txtInsignia.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(232, 291, 112, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		txtId = new JTextField();
+		txtId.setBounds(232, 291, 112, 20);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome");
 		lblNewLabel.setBounds(354, 71, 46, 14);
@@ -106,6 +115,74 @@ public class pokedex extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		btnNewButton = new JButton("Cadastrar Pokemon");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Pokemon novoPokemon = new Pokemon();
+
+				String nome = txtNome.getText();
+				if (nome == null || nome.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"O campo NOME está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.getNomePoke();
+				}
+
+				String peso = txtPeso.getText();
+				if (peso == null || peso.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.setPeso(peso);
+				}
+				
+				String insignia = txtInsignia.getText();
+				if (insignia == null || insignia.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.setInsignia(insignia);
+				}
+				
+				String id = txtId.getText();
+				if (id == null || id.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.setId(id);
+				}
+
+				String altura = txtAlt.getText();
+				if (altura == null || altura.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"O campo SENHA está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.setAltura(altura);
+				}
+
+				ControlPoke tabelaPoke =ControlPoke.getInstancias();
+				boolean insert = tabelaPoke.insert(novoPokemon);
+				if (insert == true) {
+					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
+
+					txtNome.setText(null);
+					txtPeso.setText(null);
+					txtInsignia.setText(null);
+					txtId.setText(null);
+					txtAlt.setText(null);
+					
+
+					dispose();
+
+					Login login = new Login();
+					login.setLocationRelativeTo(null);
+					login.setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "ERRO no cadastro");
+				}
+				
+			}
+		});
 		btnNewButton.setBounds(49, 347, 197, 23);
 		contentPane.add(btnNewButton);
 	}

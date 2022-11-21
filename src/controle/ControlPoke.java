@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import modelo.Pokemon;
 
 public class ControlPoke {
-private static ArrayList<Pokemon> tabelaConta;
+private static ArrayList<Pokemon> tabelaPoke;
 	
 	private static ControlPoke instancias;
 
@@ -13,7 +13,7 @@ private static ArrayList<Pokemon> tabelaConta;
 		
 		if (instancias == null) {
 			instancias= new ControlPoke();
-			tabelaConta= new ArrayList<>();
+			tabelaPoke= new ArrayList<>();
 			
 		}
 		return instancias;
@@ -24,7 +24,7 @@ private static ArrayList<Pokemon> tabelaConta;
 	public boolean insert(Pokemon p) {
 
 		if (p != null) {
-			this.tabelaConta.add(p);
+			this.tabelaPoke.add(p);
 			return true;
 		}
 

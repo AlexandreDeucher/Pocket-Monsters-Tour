@@ -3,8 +3,8 @@ package modelo;
 public class Pokemon {
 
 	private String nomePoke;
-	private Float peso;
-	private Float altura;
+	private String peso;
+	private String altura;
 	private String doce;
 	private String insignia;
 	
@@ -16,16 +16,16 @@ public class Pokemon {
 	public void setNomePoke(String nomePoke) {
 		this.nomePoke = nomePoke;
 	}
-	public Float getPeso() {
+	public String getPeso() {
 		return peso;
 	}
-	public void setPeso(Float peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
-	public Float getAltura() {
+	public String getAltura() {
 		return altura;
 	}
-	public void setAltura(Float altura) {
+	public void setAltura(String altura) {
 		this.altura = altura;
 	}
 	public String getDoce() {
