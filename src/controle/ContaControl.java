@@ -2,15 +2,26 @@ package controle;
 
 import java.util.ArrayList;
 
+
 import modelo.Conta;
 
 public class ContaControl {
-	private ArrayList<Conta> tabelaConta;
+	
+	private static ArrayList<Conta> tabelaConta;
+	
+	private static ContaControl instancia;
 
-	public ContaControl() {
-		this.tabelaConta = new ArrayList<>();
+	public static ContaControl getInstancia() {
+		
+		if (instancia == null) {
+			instancia = new ContaControl();
+			tabelaConta= new ArrayList<>();
+			
+		}
+		return instancia;
 	}
-
+	
+	
 	// Insert
 	public boolean insert(Conta c) {
 

@@ -127,7 +127,7 @@ public class Cadastro extends JFrame {
 					novaConta.setPassword(senha);
 				}
 
-				ContaControl tabelaConta = new ContaControl();
+				ContaControl tabelaConta =ContaControl.getInstancia();
 				boolean insert = tabelaConta.insert(novaConta);
 				if (insert == true) {
 					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
