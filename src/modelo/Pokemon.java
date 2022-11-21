@@ -7,6 +7,7 @@ public class Pokemon {
 	private String altura;
 	private String doce;
 	private String insignia;
+	private String id;
 	
 	
 	
@@ -39,5 +40,12 @@ public class Pokemon {
 	}
 	public void setInsignia(String insignia) {
 		this.insignia = insignia;
+	}
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }

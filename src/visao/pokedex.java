@@ -146,6 +146,7 @@ public class pokedex extends JFrame {
 				
 				String id = txtId.getText();
 				if (id == null || id.isEmpty()) {
+					
 					JOptionPane.showMessageDialog(null,
 							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
 				} else {
@@ -180,7 +181,6 @@ public class pokedex extends JFrame {
 				} else {
 					JOptionPane.showMessageDialog(null, "ERRO no cadastro");
 				}
-				
 			}
 		});
 		btnNewButton.setBounds(49, 347, 197, 23);
