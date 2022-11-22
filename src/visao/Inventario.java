@@ -63,8 +63,9 @@ public class Inventario extends JFrame {
 		btnPokedex.setForeground(new Color(255, 255, 255));
 		btnPokedex.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				new pokedex().setVisible(true);
+				Poke poke = new Poke();
+				poke.setLocationRelativeTo(null);
+				poke.setVisible(true);
 			}
 		});
 		btnPokedex.setBackground(new Color(119, 118, 123));

@@ -11,6 +11,10 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JToggleButton;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Perfil extends JFrame {
 
@@ -60,5 +64,17 @@ public class Perfil extends JFrame {
 		txtNome.setBounds(165, 73, 172, 22);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
+		
+		JButton btnNewButton = new JButton("voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Inventario inventario = new Inventario();
+				inventario.setLocationRelativeTo(null);
+				inventario.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(377, 201, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }

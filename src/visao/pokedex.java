@@ -65,7 +65,7 @@ public class pokedex extends JFrame {
 		txtCharizard.setEditable(false);
 		txtCharizard.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		txtCharizard.setText("Pokedéx");
-		txtCharizard.setBounds(133, 11, 167, 42);
+		txtCharizard.setBounds(203, 11, 167, 42);
 		contentPane.add(txtCharizard);
 		txtCharizard.setColumns(10);
 		
@@ -131,7 +131,7 @@ public class pokedex extends JFrame {
 				String peso = txtPeso.getText();
 				if (peso == null || peso.isEmpty()) {
 					JOptionPane.showMessageDialog(null,
-							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+							"O campo PESO está vazio, por favor preencha devidamente o campo.");
 				} else {
 					novoPokemon.setPeso(peso);
 				}
@@ -139,7 +139,7 @@ public class pokedex extends JFrame {
 				String insignia = txtInsignia.getText();
 				if (insignia == null || insignia.isEmpty()) {
 					JOptionPane.showMessageDialog(null,
-							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+							"O campo INSIGNIA está vazio, por favor preencha devidamente o campo.");
 				} else {
 					novoPokemon.setInsignia(insignia);
 				}
@@ -148,7 +148,7 @@ public class pokedex extends JFrame {
 				if (id == null || id.isEmpty()) {
 					
 					JOptionPane.showMessageDialog(null,
-							"O campo EMAIL está vazio, por favor preencha devidamente o campo.");
+							"O campo ID está vazio, por favor preencha devidamente o campo.");
 				} else {
 					novoPokemon.setId(id);
 				}
@@ -156,7 +156,7 @@ public class pokedex extends JFrame {
 				String altura = txtAlt.getText();
 				if (altura == null || altura.isEmpty()) {
 					JOptionPane.showMessageDialog(null,
-							"O campo SENHA está vazio, por favor preencha devidamente o campo.");
+							"O campo ALTURA está vazio, por favor preencha devidamente o campo.");
 				} else {
 					novoPokemon.setAltura(altura);
 				}
@@ -175,15 +175,15 @@ public class pokedex extends JFrame {
 
 					dispose();
 
-					Login login = new Login();
-					login.setLocationRelativeTo(null);
-					login.setVisible(true);
+					Poke poke = new Poke();
+					poke.setLocationRelativeTo(null);
+					poke.setVisible(true);
 				} else {
 					JOptionPane.showMessageDialog(null, "ERRO no cadastro");
 				}
 			}
 		});
-		btnNewButton.setBounds(49, 347, 197, 23);
+		btnNewButton.setBounds(203, 344, 197, 23);
 		contentPane.add(btnNewButton);
 	}
 

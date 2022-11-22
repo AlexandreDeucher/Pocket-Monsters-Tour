@@ -52,7 +52,7 @@ public class Missoes extends JFrame {
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(Missoes.class.getResource("/visao/bulba_hw-removebg-preview (1).png")));
-		label.setBounds(40, 65, 171, 218);
+		label.setBounds(20, 98, 180, 218);
 		contentPane.add(label);
 		
 		JButton btnVejaOSeu = new JButton("Veja o seu perfil");
@@ -70,7 +70,15 @@ public class Missoes extends JFrame {
 		btnVejaOSeu.setBounds(20, 13, 180, 25);
 		contentPane.add(btnVejaOSeu);
 		
-		JButton btnAbraAAba = new JButton("Abra a aba batalhas");
+		JButton btnAbraAAba = new JButton("volte ao inventario");
+		btnAbraAAba.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Inventario inventario = new Inventario();
+				inventario.setLocationRelativeTo(null);
+				inventario.setVisible(true);
+			}
+		});
 		btnAbraAAba.setForeground(new Color(255, 255, 255));
 		btnAbraAAba.setBackground(new Color(94, 92, 100));
 		btnAbraAAba.setBounds(20, 50, 180, 25);
