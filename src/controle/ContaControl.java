@@ -1,10 +1,10 @@
 package controle;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 
 import modelo.Conta;
-
+ 
 public class ContaControl {
 	
 	private static ArrayList<Conta> tabelaConta;

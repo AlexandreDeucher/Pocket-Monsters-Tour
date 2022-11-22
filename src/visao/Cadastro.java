@@ -1,6 +1,6 @@
 package visao;
 
-import java.awt.EventQueue;
+import java.awt.EventQueue; 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -127,8 +127,10 @@ public class Cadastro extends JFrame {
 					novaConta.setPassword(senha);
 				}
 
-				ContaControl tabelaConta =ContaControl.getInstancia();
+				ContaControl tabelaConta = ContaControl.getInstancia();
+				
 				boolean insert = tabelaConta.insert(novaConta);
+				
 				if (insert == true) {
 					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
 
