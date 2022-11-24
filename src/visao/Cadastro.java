@@ -100,6 +100,7 @@ public class Cadastro extends JFrame {
 		btnNewButton = new JButton("Cadastrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 
 				Conta novaConta = new Conta();
 

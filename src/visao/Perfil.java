@@ -1,7 +1,7 @@
 package visao;
 
 import java.awt.EventQueue;
-
+import controle.ContaControl; 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -56,12 +56,14 @@ public class Perfil extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
+		txtNome.setEnabled(false);
+		txtNome.setEditable(false);
 		txtNome.setFont(new Font("Dialog", Font.PLAIN, 18));
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNome.setForeground(new Color(255, 255, 255));
 		txtNome.setBackground(new Color(0, 128, 192));
-		txtNome.setText("nome");
-		txtNome.setBounds(165, 73, 172, 22);
+		txtNome.setText(getName());
+		txtNome.setBounds(165, 73, 115, 23);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		

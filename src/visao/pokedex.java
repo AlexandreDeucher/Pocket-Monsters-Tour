@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import modelo.Pokemon;
+import javax.swing.SwingConstants;
 public class pokedex extends JFrame {
 
 	private JPanel contentPane;
@@ -54,6 +55,7 @@ public class pokedex extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 646, 431);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(102, 51, 102));
 		contentPane.setForeground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -61,6 +63,7 @@ public class pokedex extends JFrame {
 		contentPane.setLayout(null);
 		
 		txtCharizard = new JTextField();
+		txtCharizard.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCharizard.setForeground(new Color(192, 192, 192));
 		txtCharizard.setEditable(false);
 		txtCharizard.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -95,26 +98,33 @@ public class pokedex extends JFrame {
 		txtId.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(354, 71, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("peso");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(354, 126, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("altura");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(354, 180, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Insignia");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(354, 238, 92, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("id");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(354, 294, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		btnNewButton = new JButton("Cadastrar Pokemon");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(102, 0, 51));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -183,7 +193,7 @@ public class pokedex extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(203, 344, 197, 23);
+		btnNewButton.setBounds(203, 344, 180, 23);
 		contentPane.add(btnNewButton);
 	}
 

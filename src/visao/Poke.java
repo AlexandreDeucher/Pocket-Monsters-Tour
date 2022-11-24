@@ -11,6 +11,8 @@ import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class Poke extends JFrame {
 
@@ -40,25 +42,31 @@ public class Poke extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 601, 430);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(51, 0, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		txtTitulo = new JTextField();
+		txtTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTitulo.setForeground(new Color(255, 255, 255));
+		txtTitulo.setBackground(new Color(102, 0, 51));
 		txtTitulo.setEditable(false);
 		txtTitulo.setEnabled(false);
 		txtTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtTitulo.setText("Seus Pokemons");
-		txtTitulo.setBounds(96, 24, 201, 39);
+		txtTitulo.setBounds(118, 30, 201, 39);
 		contentPane.add(txtTitulo);
 		txtTitulo.setColumns(10);
 		
 		JList list = new JList();
-		list.setBounds(10, 98, 391, 282);
+		list.setBounds(36, 101, 365, 279);
 		contentPane.add(list);
 		
 		JButton btnCadastroPoke = new JButton("Cadastrar");
+		btnCadastroPoke.setForeground(new Color(255, 255, 255));
+		btnCadastroPoke.setBackground(new Color(102, 0, 51));
 		btnCadastroPoke.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -69,10 +77,12 @@ public class Poke extends JFrame {
 				
 			}
 		});
-		btnCadastroPoke.setBounds(453, 316, 107, 39);
+		btnCadastroPoke.setBounds(452, 316, 100, 23);
 		contentPane.add(btnCadastroPoke);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(new Color(102, 0, 51));
+		btnVoltar.setForeground(new Color(255, 255, 255));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -81,7 +91,7 @@ public class Poke extends JFrame {
 				inventario.setVisible(true);
 			}
 		});
-		btnVoltar.setBounds(463, 282, 89, 23);
+		btnVoltar.setBounds(452, 282, 100, 23);
 		contentPane.add(btnVoltar);
 	}
 }
