@@ -45,8 +45,7 @@ private static ArrayList<Pokemon> tabelaPoke;
 
 	// Select
 	public ArrayList<Pokemon> listaPokes() {
-
-		return null;
+		return tabelaPoke;
 	}
 	
 	
