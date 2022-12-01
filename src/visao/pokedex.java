@@ -31,7 +31,9 @@ public class pokedex extends JFrame {
 	private JTextField txtAlt;
 	private JTextField txtInsignia;
 	private JTextField txtId;
+	private JTextField txtDoce;
 	private JButton btnNewButton;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -79,24 +81,29 @@ public class pokedex extends JFrame {
 		txtNome.setColumns(10);
 		
 		txtPeso = new JTextField();
-		txtPeso.setBounds(232, 123, 112, 20);
+		txtPeso.setBounds(232, 109, 112, 20);
 		contentPane.add(txtPeso);
 		txtPeso.setColumns(10);
 		
 		txtAlt = new JTextField();
-		txtAlt.setBounds(232, 177, 112, 20);
+		txtAlt.setBounds(232, 154, 112, 20);
 		contentPane.add(txtAlt);
 		txtAlt.setColumns(10);
 		
 		txtInsignia = new JTextField();
-		txtInsignia.setBounds(232, 235, 112, 20);
+		txtInsignia.setBounds(232, 199, 112, 20);
 		contentPane.add(txtInsignia);
 		txtInsignia.setColumns(10);
 		
 		txtId = new JTextField();
-		txtId.setBounds(232, 291, 112, 20);
+		txtId.setBounds(232, 245, 112, 20);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setBounds(232, 282, 112, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -105,22 +112,22 @@ public class pokedex extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("peso");
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setBounds(354, 126, 46, 14);
+		lblNewLabel_1.setBounds(354, 112, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("altura");
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setBounds(354, 180, 46, 14);
+		lblNewLabel_2.setBounds(354, 157, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Insignia");
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setBounds(354, 238, 92, 14);
+		lblNewLabel_3.setBounds(354, 202, 92, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("id");
 		lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		lblNewLabel_4.setBounds(354, 294, 46, 14);
+		lblNewLabel_4.setBounds(354, 248, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		btnNewButton = new JButton("Cadastrar Pokemon");
@@ -136,7 +143,7 @@ public class pokedex extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo NOME está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.getNomePoke();
+					novoPokemon.setNomePoke(nome);
 				}
 
 				String peso = txtPeso.getText();
@@ -163,6 +170,15 @@ public class pokedex extends JFrame {
 				} else {
 					novoPokemon.setId(id);
 				}
+				
+				String doce = txtDoce.getText();
+				if (doce == null || doce.isEmpty()) {
+					
+					JOptionPane.showMessageDialog(null,
+							"O campo DOCE está vazio, por favor preencha devidamente o campo.");
+				} else {
+					novoPokemon.setDoce(doce);
+				}
 
 				String altura = txtAlt.getText();
 				if (altura == null || altura.isEmpty()) {
@@ -182,6 +198,7 @@ public class pokedex extends JFrame {
 					txtInsignia.setText(null);
 					txtId.setText(null);
 					txtAlt.setText(null);
+					txtDoce.setText(null);
 					
 
 					dispose();
@@ -196,6 +213,11 @@ public class pokedex extends JFrame {
 		});
 		btnNewButton.setBounds(203, 344, 180, 23);
 		contentPane.add(btnNewButton);
+		
+		
+		JLabel lblNewLabel_5 = new JLabel("Doce");
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setBounds(354, 285, 46, 14);
+		contentPane.add(lblNewLabel_5);
 	}
-
 }

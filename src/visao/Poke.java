@@ -78,11 +78,11 @@ public class Poke extends JFrame {
 		ArrayList<Pokemon> listaPokemon = controlPoke.listaPokes();
 
 		JTable table = new JTable();
-		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "Altura", "Peso" });
+		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "Altura", "Peso", "Insignia", "Doce", "Id"  });
 		table.setModel(modelo);
 		if (listaPokemon.size() > 0 && listaPokemon != null) {
 			for (Pokemon pokemon : listaPokemon) {
-				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso() });
+				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso(), pokemon.getInsignia(), pokemon.getDoce(), pokemon.getId() });
 			}
 		}
 		scrollPane.setViewportView(table);
