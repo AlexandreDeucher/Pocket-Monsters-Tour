@@ -33,7 +33,6 @@ public class pokedex extends JFrame {
 	private JTextField txtId;
 	private JTextField txtDoce;
 	private JButton btnNewButton;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -100,10 +99,10 @@ public class pokedex extends JFrame {
 		contentPane.add(txtId);
 		txtId.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBounds(232, 282, 112, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtDoce = new JTextField();
+		txtDoce.setBounds(232, 282, 112, 20);
+		contentPane.add(txtDoce);
+		txtDoce.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -190,6 +189,7 @@ public class pokedex extends JFrame {
 
 				ControlPoke tabelaPoke =ControlPoke.getInstancias();
 				boolean insert = tabelaPoke.insert(novoPokemon);
+				
 				if (insert == true) {
 					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
 

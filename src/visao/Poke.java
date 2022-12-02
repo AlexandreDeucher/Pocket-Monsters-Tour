@@ -27,6 +27,7 @@ public class Poke extends JFrame {
 	private JPanel contentPane;
 	private static ArrayList<Pokemon> tabelaPokemon;
 	private ControlPoke controlPoke;
+	private Pokemon pokemonSelecionado;
 
 	/**
 	 * Launch the application.
@@ -85,6 +86,21 @@ public class Poke extends JFrame {
 				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso(), pokemon.getInsignia(), pokemon.getDoce(), pokemon.getId() });
 			}
 		}
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int posicaoPessoa = table.getSelectedRow();
+				pokemonSelecionado = listaPokemon.get(posicaoPessoa);
+				pokemonSelecionado.getNomePoke();
+				pokemonSelecionado.getPeso();
+				pokemonSelecionado.getAltura();
+				pokemonSelecionado.getInsignia();
+				pokemonSelecionado.getDoce();
+				pokemonSelecionado.getId();
+				//txtNomePoke.setText(pokemonSelecionado.getNome());
+				//txtCPF.setText(pokemonSelecionado.getCpf());
+			}
+		});
 		scrollPane.setViewportView(table);
 
 		JButton btnAlterar = new JButton("Alterar");
