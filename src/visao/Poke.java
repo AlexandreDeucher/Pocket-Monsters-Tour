@@ -1,26 +1,22 @@
 package visao;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.ControlPoke;
 import modelo.Pokemon;
-
-import javax.swing.JTextArea;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
 
 public class Poke extends JFrame {
 
@@ -62,7 +58,7 @@ public class Poke extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				dispose();
-				pokedex pokedex = new pokedex();
+				TelaPokedex pokedex = new TelaPokedex(pokemonSelecionado);
 				pokedex.setLocationRelativeTo(null);
 				pokedex.setVisible(true);
 
@@ -79,11 +75,13 @@ public class Poke extends JFrame {
 		ArrayList<Pokemon> listaPokemon = controlPoke.listaPokes();
 
 		JTable table = new JTable();
-		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "Altura", "Peso", "Insignia", "Doce", "Id"  });
+		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
+				new String[] { "Nome", "Altura", "Peso", "Insignia", "Doce", "Id" });
 		table.setModel(modelo);
 		if (listaPokemon.size() > 0 && listaPokemon != null) {
 			for (Pokemon pokemon : listaPokemon) {
-				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso(), pokemon.getInsignia(), pokemon.getDoce(), pokemon.getId() });
+				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso(),
+						pokemon.getInsignia(), pokemon.getDoce(), pokemon.getId() });
 			}
 		}
 		table.addMouseListener(new MouseAdapter() {
@@ -97,8 +95,6 @@ public class Poke extends JFrame {
 				pokemonSelecionado.getInsignia();
 				pokemonSelecionado.getDoce();
 				pokemonSelecionado.getId();
-				//txtNomePoke.setText(pokemonSelecionado.getNome());
-				//txtCPF.setText(pokemonSelecionado.getCpf());
 			}
 		});
 		scrollPane.setViewportView(table);
@@ -106,6 +102,10 @@ public class Poke extends JFrame {
 		JButton btnAlterar = new JButton("Alterar");
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				TelaPokedex tp = new TelaPokedex(pokemonSelecionado);
+				tp.setVisible(true);
 
 			}
 		});
@@ -113,7 +113,16 @@ public class Poke extends JFrame {
 		contentPane.add(btnAlterar);
 
 		JButton btnDeletar = new JButton("Deletar");
+		btnDeletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (pokemonSelecionado != null) {
+					listaPokemon.remove(listaPokemon);
+					listaPokemon.remove(pokemonSelecionado);
+				}
+			}
+		});
 		btnDeletar.setBounds(310, 49, 89, 23);
 		contentPane.add(btnDeletar);
 	}
+
 }
