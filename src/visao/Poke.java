@@ -104,7 +104,7 @@ public class Poke extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				TelaPokedex tp = new TelaPokedex(pokemonSelecionado);
+				PokeAlterar tp = new PokeAlterar(pokemonSelecionado);
 				tp.setVisible(true);
 
 			}
