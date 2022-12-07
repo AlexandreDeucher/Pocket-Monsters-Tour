@@ -1,6 +1,6 @@
 package visao;
 
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -17,7 +17,6 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.ControlPoke;
 import modelo.Pokemon;
-import java.awt.Color;
 
 public class Poke extends JFrame {
 
@@ -66,20 +65,20 @@ public class Poke extends JFrame {
 		ControlPoke controlPoke = ControlPoke.getInstancias();
 		ArrayList<Pokemon> listaPokemon = controlPoke.listaPokes();
 
-		JTable table = new JTable();
+		JTable tablePokes = new JTable();
 		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome", "Altura", "Peso", "Insignia", "Doce", "Id" });
-		table.setModel(modelo);
+				new String[] { "Id", "Altura", "Peso", "Insignia", "Doce", "Nome" });
+		tablePokes.setModel(modelo);
 		if (listaPokemon.size() > 0 && listaPokemon != null) {
 			for (Pokemon pokemon : listaPokemon) {
-				modelo.addRow(new Object[] { pokemon.getNomePoke(), pokemon.getAltura(), pokemon.getPeso(),
-						pokemon.getInsignia(), pokemon.getDoce(), pokemon.getId() });
+				modelo.addRow(new Object[] { pokemon.getId(), pokemon.getAltura(), pokemon.getPeso(),
+						pokemon.getInsignia(), pokemon.getDoce(), pokemon.getNomePoke() });
 			}
 		}
-		table.addMouseListener(new MouseAdapter() {
+		tablePokes.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int posicaoPessoa = table.getSelectedRow();
+				int posicaoPessoa = tablePokes.getSelectedRow();
 				pokemonSelecionado = listaPokemon.get(posicaoPessoa);
 				pokemonSelecionado.getNomePoke();
 				pokemonSelecionado.getPeso();
@@ -89,16 +88,21 @@ public class Poke extends JFrame {
 				pokemonSelecionado.getId();
 			}
 		});
-		scrollPane.setViewportView(table);
+		scrollPane.setViewportView(tablePokes);
 
 		JButton btnAlterar = new JButton("Alterar");
 		btnAlterar.setForeground(new Color(255, 255, 255));
 		btnAlterar.setBackground(new Color(204, 0, 102));
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
+				int linha = tablePokes.getSelectedRow();
+				Long idPoke = (Long) tablePokes.getValueAt(linha, 0);
+
+				Pokemon pokemonAEditar = controlPoke.buscarPokePorId(idPoke);
+
 				dispose();
-				PokeAlterar tp = new PokeAlterar(pokemonSelecionado);
+				PokeAlterar tp = new PokeAlterar(pokemonAEditar);
 				tp.setVisible(true);
 
 			}
@@ -119,7 +123,7 @@ public class Poke extends JFrame {
 		});
 		btnDeletar.setBounds(310, 49, 89, 23);
 		contentPane.add(btnDeletar);
-		
+
 		JButton btnNewButton = new JButton("Voltar");
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(204, 0, 102));

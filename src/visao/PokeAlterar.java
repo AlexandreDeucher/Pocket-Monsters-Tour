@@ -50,7 +50,7 @@ public class PokeAlterar extends JFrame {
 			txtPeso.setText(this.pokemonSelecionado.getPeso());
 			txtAlt.setText(this.pokemonSelecionado.getAltura());
 			txtInsignia.setText(this.pokemonSelecionado.getInsignia());
-			txtId.setText(this.pokemonSelecionado.getId());
+			txtId.setText(String.valueOf(this.pokemonSelecionado.getId()));
 			txtDoce.setText(this.pokemonSelecionado.getDoce());
 			
 			
@@ -110,6 +110,7 @@ public class PokeAlterar extends JFrame {
 		JButton btnAlterar = new JButton("Alterar");
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Pokemon novoPokemon = new Pokemon();
 
 				String nome = txtNome.getText();
@@ -138,11 +139,11 @@ public class PokeAlterar extends JFrame {
 
 				String id = txtId.getText();
 				if (id == null || id.isEmpty()) {
-
+					
 					JOptionPane.showMessageDialog(null,
 							"O campo ID está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setId(id);
+					novoPokemon.setId(Long.valueOf(id));
 				}
 
 				String doce = txtDoce.getText();

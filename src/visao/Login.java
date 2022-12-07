@@ -103,7 +103,7 @@ public class Login extends JFrame {
 				String usuario = txtUsuario.getText();
 				String senha = pwdSenha.getText();
 
-				ContaControl tabelaConta = new ContaControl();
+				ContaControl tabelaConta = ContaControl.getInstancia();
 				Conta conta = tabelaConta.login(usuario, senha);
 				if (conta != null) {
 

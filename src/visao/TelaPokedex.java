@@ -40,22 +40,7 @@ public class TelaPokedex extends JFrame {
 	 */
 	public TelaPokedex(Pokemon pokemonSelecionado) {
 		this.pokemonSelecionado = pokemonSelecionado;
-		
-		if(this.pokemonSelecionado != null) {
-			// setar os dados do pokemon nos campos de texto
-			
-			
-			txtNome.setText(this.pokemonSelecionado.getNomePoke());
-			txtPeso.setText(this.pokemonSelecionado.getPeso());
-			txtAlt.setText(this.pokemonSelecionado.getAltura());
-			txtInsignia.setText(this.pokemonSelecionado.getInsignia());
-			txtId.setText(this.pokemonSelecionado.getId());
-			txtDoce.setText(this.pokemonSelecionado.getDoce());
-			
-			
-			
-		}
-	
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 646, 431);
 		contentPane = new JPanel();
@@ -169,7 +154,7 @@ public class TelaPokedex extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo ID está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setId(id);
+					novoPokemon.setId(Long.valueOf(id));
 				}
 
 				String doce = txtDoce.getText();

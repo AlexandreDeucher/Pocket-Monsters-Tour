@@ -2,29 +2,32 @@ package controle;
 
 import java.util.ArrayList;
 
+import modelo.IControlPoke;
 import modelo.Pokemon;
 
-public class ControlPoke {
-private static ArrayList<Pokemon> tabelaPoke;
-	
+public class ControlPoke implements IControlPoke {
+	private static ArrayList<Pokemon> tabelaPoke;
+
 	private static ControlPoke instancias;
 
+	private ControlPoke() {
+	}
+
 	public static ControlPoke getInstancias() {
-		
+
 		if (instancias == null) {
-			instancias= new ControlPoke();
-			tabelaPoke= new ArrayList<>();
-			
+			instancias = new ControlPoke();
+			tabelaPoke = new ArrayList<>();
+
 		}
 		return instancias;
 	}
-	
-	
+
 	// Insert
 	public boolean insert(Pokemon p) {
 
 		if (p != null) {
-			this.tabelaPoke.add(p);
+			tabelaPoke.add(p);
 			return true;
 		}
 
@@ -43,10 +46,20 @@ private static ArrayList<Pokemon> tabelaPoke;
 		return false;
 	}
 
+	public Pokemon buscarPokePorId(Long id) {
+
+		for (Pokemon pokemon : tabelaPoke) {
+			if (pokemon.getId() == id) {
+				return pokemon;
+			}
+		}
+
+		return null;
+	}
+
 	// Select
 	public ArrayList<Pokemon> listaPokes() {
 		return tabelaPoke;
 	}
-	
-	
+
 }

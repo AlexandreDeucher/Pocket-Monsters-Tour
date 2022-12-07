@@ -1,32 +1,40 @@
 package controle;
 
-import java.util.ArrayList; 
-
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 import modelo.Conta;
- 
-public class ContaControl {
-	
+import modelo.IContaControl;
+
+public class ContaControl implements IContaControl {
+
 	private static ArrayList<Conta> tabelaConta;
-	
 	private static ContaControl instancia;
+	
+	private ContaControl() {}
 
 	public static ContaControl getInstancia() {
-		
+
 		if (instancia == null) {
 			instancia = new ContaControl();
-			tabelaConta= new ArrayList<>();
-			
+			tabelaConta = new ArrayList<>();
+
+			Conta c = new Conta();
+			c.setName("admin");
+			c.setEmail("admin");
+			c.setPassword("admin");
+			c.setDataNascimento(LocalDate.now());
+			tabelaConta.add(c);
+
 		}
 		return instancia;
 	}
-	
-	
+
 	// Insert
 	public boolean insert(Conta c) {
 
 		if (c != null) {
-			this.tabelaConta.add(c);
+			tabelaConta.add(c);
 			return true;
 		}
 
