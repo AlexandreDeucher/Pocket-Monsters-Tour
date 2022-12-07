@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.ControlPoke;
 import modelo.Pokemon;
+import java.awt.Color;
 
 public class Poke extends JFrame {
 
@@ -34,14 +35,17 @@ public class Poke extends JFrame {
 	 */
 	public Poke() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 545, 359);
+		setBounds(100, 100, 600, 359);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(51, 0, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBackground(new Color(204, 0, 102));
+		btnCadastrar.setForeground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -52,7 +56,7 @@ public class Poke extends JFrame {
 
 			}
 		});
-		btnCadastrar.setBounds(434, 286, 85, 23);
+		btnCadastrar.setBounds(434, 286, 101, 23);
 		contentPane.add(btnCadastrar);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -88,6 +92,8 @@ public class Poke extends JFrame {
 		scrollPane.setViewportView(table);
 
 		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.setForeground(new Color(255, 255, 255));
+		btnAlterar.setBackground(new Color(204, 0, 102));
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -101,6 +107,8 @@ public class Poke extends JFrame {
 		contentPane.add(btnAlterar);
 
 		JButton btnDeletar = new JButton("Deletar");
+		btnDeletar.setForeground(new Color(255, 255, 255));
+		btnDeletar.setBackground(new Color(204, 0, 102));
 		btnDeletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (pokemonSelecionado != null) {
@@ -113,6 +121,8 @@ public class Poke extends JFrame {
 		contentPane.add(btnDeletar);
 		
 		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(204, 0, 102));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Inventario inventario = new Inventario();
@@ -120,7 +130,7 @@ public class Poke extends JFrame {
 				inventario.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(434, 252, 85, 23);
+		btnNewButton.setBounds(434, 252, 101, 23);
 		contentPane.add(btnNewButton);
 	}
 }

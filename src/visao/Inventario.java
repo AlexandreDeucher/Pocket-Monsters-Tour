@@ -43,6 +43,36 @@ public class Inventario extends JFrame {
 				new Perfil().setVisible(true);
 			}
 		});
+		
+		JLabel lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setIcon(new ImageIcon(Inventario.class.getResource("/visao/PGO_Berries-removebg-preview_resized.png")));
+		lblNewLabel_10.setBounds(404, 317, 139, 175);
+		contentPane.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setIcon(new ImageIcon(Inventario.class.getResource("/visao/doce.PNG")));
+		lblNewLabel_9.setBounds(203, 351, 132, 92);
+		contentPane.add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(Inventario.class.getResource("/visao/poebola_resized.jpg")));
+		lblNewLabel_8.setBounds(25, 334, 139, 150);
+		contentPane.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setIcon(new ImageIcon(Inventario.class.getResource("/visao/ovo_resized.png")));
+		lblNewLabel_7.setBounds(231, 120, 137, 141);
+		contentPane.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon(Inventario.class.getResource("/visao/poison_compressed.PNG")));
+		lblNewLabel_6.setBounds(25, 175, 139, 83);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(Inventario.class.getResource("/visao/poison_compressed.PNG")));
+		lblNewLabel_5.setBounds(32, 120, 132, 63);
+		contentPane.add(lblNewLabel_5);
 		btnPerfil.setBackground(new Color(119, 118, 123));
 		btnPerfil.setBounds(10, 11, 139, 23);
 		contentPane.add(btnPerfil);
@@ -96,11 +126,6 @@ public class Inventario extends JFrame {
 		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(423, 301, 46, 14);
 		contentPane.add(lblNewLabel_4);
-		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Inventario.class.getResource("/visao/charizzard.png")));
-		label.setBounds(455, -51, 349, 419);
-		contentPane.add(label);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(25, 120, 139, 141);
