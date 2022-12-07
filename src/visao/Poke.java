@@ -28,18 +28,6 @@ public class Poke extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Poke frame = new Poke();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -123,6 +111,16 @@ public class Poke extends JFrame {
 		});
 		btnDeletar.setBounds(310, 49, 89, 23);
 		contentPane.add(btnDeletar);
+		
+		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inventario inventario = new Inventario();
+				inventario.setLocationRelativeTo(null);
+				inventario.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(434, 252, 85, 23);
+		contentPane.add(btnNewButton);
 	}
-
 }

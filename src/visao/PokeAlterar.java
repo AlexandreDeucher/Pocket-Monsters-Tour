@@ -29,22 +29,11 @@ public class PokeAlterar extends JFrame {
 	private JTextField txtId;
 	private JTextField txtDoce;
 	private Pokemon pokemonSelecionado;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PokeAlterar frame = new PokeAlterar();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -198,6 +187,17 @@ public class PokeAlterar extends JFrame {
 		});
 		btnAlterar.setBounds(189, 359, 89, 23);
 		contentPane.add(btnAlterar);		
+		
+		btnNewButton = new JButton("Voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Poke poke = new Poke();
+				poke.setLocationRelativeTo(null);
+				poke.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(410, 359, 89, 23);
+		contentPane.add(btnNewButton);
 	
 	}
 }
