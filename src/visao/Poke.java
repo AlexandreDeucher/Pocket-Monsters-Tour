@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -21,9 +22,10 @@ import modelo.Pokemon;
 public class Poke extends JFrame {
 
 	private JPanel contentPane;
-	private static ArrayList<Pokemon> tabelaPokemon;
-	private ControlPoke controlPoke;
 	private Pokemon pokemonSelecionado;
+	private JTable tablePokes;
+	private ControlPoke controlPoke;
+	private ArrayList<Pokemon> listaPokemon;
 
 	/**
 	 * Launch the application.
@@ -33,6 +35,7 @@ public class Poke extends JFrame {
 	 * Create the frame.
 	 */
 	public Poke() {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 359);
 		contentPane = new JPanel();
@@ -61,20 +64,13 @@ public class Poke extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(21, 83, 409, 226);
 		contentPane.add(scrollPane);
+		
+		controlPoke = ControlPoke.getInstancias();
+		listaPokemon = controlPoke.listaPokes();
+		tablePokes = new JTable();
 
-		ControlPoke controlPoke = ControlPoke.getInstancias();
-		ArrayList<Pokemon> listaPokemon = controlPoke.listaPokes();
+		atualizar();
 
-		JTable tablePokes = new JTable();
-		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Id", "Altura", "Peso", "Insignia", "Doce", "Nome" });
-		tablePokes.setModel(modelo);
-		if (listaPokemon.size() > 0 && listaPokemon != null) {
-			for (Pokemon pokemon : listaPokemon) {
-				modelo.addRow(new Object[] { pokemon.getId(), pokemon.getAltura(), pokemon.getPeso(),
-						pokemon.getInsignia(), pokemon.getDoce(), pokemon.getNomePoke() });
-			}
-		}
 		tablePokes.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -116,8 +112,13 @@ public class Poke extends JFrame {
 		btnDeletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (pokemonSelecionado != null) {
-					listaPokemon.remove(listaPokemon);
 					listaPokemon.remove(pokemonSelecionado);
+
+					JOptionPane.showMessageDialog(null, "Sucesso!");
+					atualizar();
+
+				} else {
+					// mensagem erro nenhum selecionado
 				}
 			}
 		});
@@ -136,5 +137,22 @@ public class Poke extends JFrame {
 		});
 		btnNewButton.setBounds(434, 252, 101, 23);
 		contentPane.add(btnNewButton);
+
+	
+	}
+
+	public void atualizar() {
+
+		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
+				new String[] { "Id", "Altura", "Peso", "Insignia", "Doce", "Nome" });
+
+		if (listaPokemon.size() > 0 && listaPokemon != null) {
+			for (Pokemon pokemon : listaPokemon) {
+				modelo.addRow(new Object[] { pokemon.getId(), pokemon.getAltura(), pokemon.getPeso(),
+						pokemon.getInsignia(), pokemon.getDoce(), pokemon.getNomePoke() });
+			}
+		}
+
+		tablePokes.setModel(modelo);
 	}
 }

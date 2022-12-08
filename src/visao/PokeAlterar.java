@@ -101,14 +101,12 @@ public class PokeAlterar extends JFrame {
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Pokemon novoPokemon = new Pokemon();
-
 				String nome = txtNome.getText();
 				if (nome == null || nome.isEmpty()) {
 					JOptionPane.showMessageDialog(null,
 							"O campo NOME está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setNomePoke(nome);
+					pokemonSelecionado.setNomePoke(nome);
 				}
 
 				String peso = txtPeso.getText();
@@ -116,7 +114,7 @@ public class PokeAlterar extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo PESO está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setPeso(peso);
+					pokemonSelecionado.setPeso(peso);
 				}
 
 				String insignia = txtInsignia.getText();
@@ -124,7 +122,7 @@ public class PokeAlterar extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo INSIGNIA está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setInsignia(insignia);
+					pokemonSelecionado.setInsignia(insignia);
 				}
 
 				String doce = txtDoce.getText();
@@ -133,7 +131,7 @@ public class PokeAlterar extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo DOCE está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setDoce(doce);
+					pokemonSelecionado.setDoce(doce);
 				}
 
 				String altura = txtAlt.getText();
@@ -141,13 +139,12 @@ public class PokeAlterar extends JFrame {
 					JOptionPane.showMessageDialog(null,
 							"O campo ALTURA está vazio, por favor preencha devidamente o campo.");
 				} else {
-					novoPokemon.setAltura(altura);
+					pokemonSelecionado.setAltura(altura);
 				}
 
 				ControlPoke tabelaPoke = ControlPoke.getInstancias();
-				boolean update = tabelaPoke.update(novoPokemon, novoPokemon.getId());
+				boolean update = tabelaPoke.update(pokemonSelecionado, pokemonSelecionado.getId());
 
-				
 				if (update == true) {
 					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
 
@@ -180,27 +177,27 @@ public class PokeAlterar extends JFrame {
 		});
 		btnNewButton.setBounds(186, 355, 89, 23);
 		contentPane.add(btnNewButton);
-		
+
 		JLabel lblNewLabel = new JLabel("Nome");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(120, 104, 46, 14);
 		contentPane.add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Peso");
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(120, 147, 46, 14);
 		contentPane.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Altura");
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(118, 190, 46, 14);
 		contentPane.add(lblNewLabel_2);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Insignia");
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(118, 233, 46, 14);
 		contentPane.add(lblNewLabel_3);
-		
+
 		JLabel lblNewLabel_4 = new JLabel("Doce");
 		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(118, 274, 46, 14);
