@@ -38,26 +38,10 @@ public class PokeAlterar extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	
+
 	public PokeAlterar(Pokemon pokemonSelecionado) {
 		this.pokemonSelecionado = pokemonSelecionado;
-		
-		if(this.pokemonSelecionado != null) {
-			// setar os dados do pokemon nos campos de texto
-			
-			
-			txtNome.setText(this.pokemonSelecionado.getNomePoke());
-			txtPeso.setText(this.pokemonSelecionado.getPeso());
-			txtAlt.setText(this.pokemonSelecionado.getAltura());
-			txtInsignia.setText(this.pokemonSelecionado.getInsignia());
-			txtId.setText(String.valueOf(this.pokemonSelecionado.getId()));
-			txtDoce.setText(this.pokemonSelecionado.getDoce());
-			
-			
-			
-		}
-	}
-	public PokeAlterar() {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 566, 444);
 		contentPane = new JPanel();
@@ -66,7 +50,7 @@ public class PokeAlterar extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		txtPokemon = new JTextField();
 		txtPokemon.setHorizontalAlignment(SwingConstants.CENTER);
 		txtPokemon.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -76,41 +60,53 @@ public class PokeAlterar extends JFrame {
 		txtPokemon.setBounds(143, 23, 180, 55);
 		contentPane.add(txtPokemon);
 		txtPokemon.setColumns(10);
-		
+
 		txtNome = new JTextField();
 		txtNome.setBounds(174, 101, 119, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
-		
+
 		txtPeso = new JTextField();
 		txtPeso.setBounds(174, 144, 119, 20);
 		contentPane.add(txtPeso);
 		txtPeso.setColumns(10);
-		
+
 		txtAlt = new JTextField();
 		txtAlt.setBounds(174, 187, 119, 20);
 		contentPane.add(txtAlt);
 		txtAlt.setColumns(10);
-		
+
 		txtInsignia = new JTextField();
 		txtInsignia.setBounds(174, 230, 119, 20);
 		contentPane.add(txtInsignia);
 		txtInsignia.setColumns(10);
-		
+
 		txtId = new JTextField();
 		txtId.setBounds(174, 273, 119, 20);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
-		
+
 		txtDoce = new JTextField();
 		txtDoce.setBounds(174, 316, 119, 20);
 		contentPane.add(txtDoce);
 		txtDoce.setColumns(10);
-		
+
+		if (this.pokemonSelecionado != null) {
+			// setar os dados do pokemon nos campos de texto
+
+			txtNome.setText(this.pokemonSelecionado.getNomePoke());
+			txtPeso.setText(this.pokemonSelecionado.getPeso());
+			txtAlt.setText(this.pokemonSelecionado.getAltura());
+			txtInsignia.setText(this.pokemonSelecionado.getInsignia());
+			txtId.setText(String.valueOf(this.pokemonSelecionado.getId()));
+			txtDoce.setText(this.pokemonSelecionado.getDoce());
+
+		}
+
 		JButton btnAlterar = new JButton("Alterar");
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				Pokemon novoPokemon = new Pokemon();
 
 				String nome = txtNome.getText();
@@ -139,7 +135,7 @@ public class PokeAlterar extends JFrame {
 
 				String id = txtId.getText();
 				if (id == null || id.isEmpty()) {
-					
+
 					JOptionPane.showMessageDialog(null,
 							"O campo ID está vazio, por favor preencha devidamente o campo.");
 				} else {
@@ -164,9 +160,10 @@ public class PokeAlterar extends JFrame {
 				}
 
 				ControlPoke tabelaPoke = ControlPoke.getInstancias();
-				boolean insert = tabelaPoke.insert(novoPokemon);
+				boolean update = tabelaPoke.update(novoPokemon, novoPokemon.getId(id));
 
-				if (insert == true) {
+				
+				if (update == true) {
 					JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
 
 					txtNome.setText(null);
@@ -187,8 +184,8 @@ public class PokeAlterar extends JFrame {
 			}
 		});
 		btnAlterar.setBounds(189, 359, 89, 23);
-		contentPane.add(btnAlterar);		
-		
+		contentPane.add(btnAlterar);
+
 		btnNewButton = new JButton("Voltar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -199,6 +196,6 @@ public class PokeAlterar extends JFrame {
 		});
 		btnNewButton.setBounds(410, 359, 89, 23);
 		contentPane.add(btnNewButton);
-	
+
 	}
 }
