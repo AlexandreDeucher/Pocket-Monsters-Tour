@@ -35,14 +35,13 @@ public class ControlPoke implements IControlPoke {
 	}
 
 	// Update
-	public boolean update(Pokemon p, int idPokemon) {
+	public boolean update(Pokemon p, Long idPokemon) {
 		for (Pokemon pokemon : tabelaPoke) {
 			if (pokemon.getId() == idPokemon) {
 				pokemon.setAltura(p.getAltura());
 				pokemon.setNomePoke(p.getNomePoke());
 				pokemon.setDoce(p.getDoce());
 				pokemon.setInsignia(p.getInsignia());
-				pokemon.setId(p.getId());
 
 				return true;
 			}
@@ -51,7 +50,7 @@ public class ControlPoke implements IControlPoke {
 	}
 
 	// Delete
-	public boolean delete(Pokemon p, int idPokemon) {
+	public boolean delete(Pokemon p, Long idPokemon) {
 		for (Pokemon pokemon : tabelaPoke) {
 			if (pokemon.getId() == idPokemon) {
 				tabelaPoke.remove(pokemon);

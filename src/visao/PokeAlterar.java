@@ -17,6 +17,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class PokeAlterar extends JFrame {
 
@@ -26,7 +27,6 @@ public class PokeAlterar extends JFrame {
 	private JTextField txtPeso;
 	private JTextField txtAlt;
 	private JTextField txtInsignia;
-	private JTextField txtId;
 	private JTextField txtDoce;
 	private Pokemon pokemonSelecionado;
 	private JButton btnNewButton;
@@ -81,13 +81,8 @@ public class PokeAlterar extends JFrame {
 		contentPane.add(txtInsignia);
 		txtInsignia.setColumns(10);
 
-		txtId = new JTextField();
-		txtId.setBounds(174, 273, 119, 20);
-		contentPane.add(txtId);
-		txtId.setColumns(10);
-
 		txtDoce = new JTextField();
-		txtDoce.setBounds(174, 316, 119, 20);
+		txtDoce.setBounds(174, 271, 119, 20);
 		contentPane.add(txtDoce);
 		txtDoce.setColumns(10);
 
@@ -98,7 +93,6 @@ public class PokeAlterar extends JFrame {
 			txtPeso.setText(this.pokemonSelecionado.getPeso());
 			txtAlt.setText(this.pokemonSelecionado.getAltura());
 			txtInsignia.setText(this.pokemonSelecionado.getInsignia());
-			txtId.setText(String.valueOf(this.pokemonSelecionado.getId()));
 			txtDoce.setText(this.pokemonSelecionado.getDoce());
 
 		}
@@ -133,15 +127,6 @@ public class PokeAlterar extends JFrame {
 					novoPokemon.setInsignia(insignia);
 				}
 
-				String id = txtId.getText();
-				if (id == null || id.isEmpty()) {
-
-					JOptionPane.showMessageDialog(null,
-							"O campo ID está vazio, por favor preencha devidamente o campo.");
-				} else {
-					novoPokemon.setId(Long.valueOf(id));
-				}
-
 				String doce = txtDoce.getText();
 				if (doce == null || doce.isEmpty()) {
 
@@ -160,7 +145,7 @@ public class PokeAlterar extends JFrame {
 				}
 
 				ControlPoke tabelaPoke = ControlPoke.getInstancias();
-				boolean update = tabelaPoke.update(novoPokemon, novoPokemon.getId(id));
+				boolean update = tabelaPoke.update(novoPokemon, novoPokemon.getId());
 
 				
 				if (update == true) {
@@ -169,7 +154,6 @@ public class PokeAlterar extends JFrame {
 					txtNome.setText(null);
 					txtPeso.setText(null);
 					txtInsignia.setText(null);
-					txtId.setText(null);
 					txtAlt.setText(null);
 					txtDoce.setText(null);
 
@@ -183,7 +167,7 @@ public class PokeAlterar extends JFrame {
 				}
 			}
 		});
-		btnAlterar.setBounds(189, 359, 89, 23);
+		btnAlterar.setBounds(156, 321, 151, 23);
 		contentPane.add(btnAlterar);
 
 		btnNewButton = new JButton("Voltar");
@@ -194,8 +178,33 @@ public class PokeAlterar extends JFrame {
 				poke.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(410, 359, 89, 23);
+		btnNewButton.setBounds(186, 355, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("Nome");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(120, 104, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Peso");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(120, 147, 46, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Altura");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBounds(118, 190, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Insignia");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setBounds(118, 233, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Doce");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setBounds(118, 274, 46, 14);
+		contentPane.add(lblNewLabel_4);
 
 	}
 }

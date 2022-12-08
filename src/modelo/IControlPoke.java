@@ -6,9 +6,9 @@ public interface IControlPoke {
 
 	public boolean insert(Pokemon p);
 
-	public boolean update(Pokemon p, int idPokemon);
+	public boolean update(Pokemon p, Long idPokemon);
 
-	public boolean delete(Pokemon p, int idPokemon);
+	public boolean delete(Pokemon p, Long idPokemon);
 
 	public ArrayList<Pokemon> listaPokes();
 
